@@ -1,7 +1,3 @@
-**Output**: `5`  
-**Explanation**: Optimal solutions:
-- Paint house 0 with color 0 (cost = 1), house 1 with color 2 (cost = 4) → total = 5
-- Paint house 0 with color 2 (cost = 3), house 1 with color 0 (cost = 2) → total = 5
 
 ## Solution
 The solution uses a **Dynamic Programming (DP)** approach:
