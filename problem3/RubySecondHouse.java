@@ -1,14 +1,16 @@
 package Week1.problem3;
+
+import java.util.Scanner;
+
 public class RubySecondHouse {
     public static int minCost(int[][] costs) {
         if (costs == null || costs.length == 0) return 0;
         
-        int n = costs.length; 
-        int k = costs[0].length;
+        int n = costs.length;
+        int k = costs[0].length; 
         
-      
         int[][] dp = new int[n][k];
-        
+    
         for (int j = 0; j < k; j++) {
             dp[0][j] = costs[0][j];
         }
@@ -34,10 +36,19 @@ public class RubySecondHouse {
     }
 
     public static void main(String[] args) {
-        int[][] costs = {{1, 5, 3}, {2, 9, 4}};
-        System.out.println("Example Output: " + minCost(costs)); 
+        Scanner scanner = new Scanner(System.in);
+    
+        int n = scanner.nextInt();
+        int k = scanner.nextInt();
+    
+        int[][] costs = new int[n][k];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < k; j++) {
+                costs[i][j] = scanner.nextInt();
+            }
+        }
 
-        int[][] costs2 = {{1, 2}, {2, 1}};
-        System.out.println("Test Case 1 Output: " + minCost(costs2)); 
+        System.out.println(minCost(costs));
+        scanner.close();
     }
 }
