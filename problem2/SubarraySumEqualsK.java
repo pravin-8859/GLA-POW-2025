@@ -1,6 +1,6 @@
 package Week1.problem2;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.*;
 
 public class SubarraySumEqualsK {
     public static int subarraySum(int[] nums, int k) {
@@ -21,12 +21,23 @@ public class SubarraySumEqualsK {
     }
 
     public static void main(String[] args) {
-        int[] nums1 = {1, 2, 3};
-        int k1 = 3;
-        System.out.println("Example 1 Output: " + subarraySum(nums1, k1));
+        Scanner scanner = new Scanner(System.in);
 
-        int[] nums2 = {1, 1, 1};
-        int k2 = 2;
-        System.out.println("Example 2 Output: " + subarraySum(nums2, k2));
+        System.out.print("Enter number of days (n): ");
+        int n = scanner.nextInt();
+
+        int[] nums = new int[n];
+        System.out.println("Enter calories burned each day:");
+        for (int i = 0; i < n; i++) {
+            nums[i] = scanner.nextInt();
+        }
+
+        System.out.print("Enter target calorie burn (k): ");
+        int k = scanner.nextInt();
+
+        int result = subarraySum(nums, k);
+        System.out.println("Total number of continuous subarrays with sum " + k + " = " + result);
+
+        scanner.close();
     }
 }
